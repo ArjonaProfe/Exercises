@@ -11,6 +11,7 @@ public class LerpExercise : MonoBehaviour
     public float modifier;
     private float interpolationSpeed;
     public GameObject sphere;
+    public bool lerpSwitch;
 
 
     private void Start()
@@ -21,6 +22,12 @@ public class LerpExercise : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SpeedCalculation();
+        Movement();
+        LerpSwitch();
+    }
+    public void SpeedCalculation()
+    {
         if (interpolationSpeed < 1 && checkPosition == true)
         {
             interpolationSpeed = interpolationSpeed + modifier * Time.deltaTime;
@@ -29,7 +36,10 @@ public class LerpExercise : MonoBehaviour
         {
             interpolationSpeed = interpolationSpeed - modifier * Time.deltaTime;
         }
+    }
 
+    public void Movement()
+    {
         if (sphere.transform.position.x == aPoint.position.x)
         {
             checkPosition = true;
@@ -38,12 +48,20 @@ public class LerpExercise : MonoBehaviour
         {
             checkPosition = false;
         }
-
+    }
+    public void LerpSwitch()
+    {
         Vector3 a = aPoint.position;
         Vector3 b = bPoint.position;
-        sphere.transform.position = Vector3.Lerp(a, b, interpolationSpeed);
-     //   sphere.transform.position = Vector3.Slerp(a, b, interpolationSpeed);
 
+        if (lerpSwitch == false)
+        {
+            sphere.transform.position = Vector3.Lerp(a, b, interpolationSpeed);
 
+        }
+        else
+        {
+            sphere.transform.position = Vector3.Slerp(a, b, interpolationSpeed);
+        }
     }
 }

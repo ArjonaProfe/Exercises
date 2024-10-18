@@ -8,7 +8,7 @@ public class LerpExercise : MonoBehaviour
     public Transform bPoint;
     private bool checkPosition;
 
-    public float modifier;
+    public float speed;
     private float interpolationSpeed;
     public GameObject sphere;
     public bool lerpSwitch;
@@ -30,11 +30,11 @@ public class LerpExercise : MonoBehaviour
     {
         if (interpolationSpeed < 1 && checkPosition == true)
         {
-            interpolationSpeed = interpolationSpeed + modifier * Time.deltaTime;
+            interpolationSpeed = interpolationSpeed + speed * Time.deltaTime;
         }
         else
         {
-            interpolationSpeed = interpolationSpeed - modifier * Time.deltaTime;
+            interpolationSpeed = interpolationSpeed - speed * Time.deltaTime;
         }
     }
 

@@ -8,7 +8,6 @@ public class ObjectsMovement : MonoBehaviour
 
     public Transform aPoint;
     public Transform bPoint;
-    public bool switchNormalized;
 
     private bool checkPosition = true;
     private float interpolationSpeed;
@@ -23,6 +22,7 @@ public class ObjectsMovement : MonoBehaviour
     {
         SpeedCalculation();
         Movement();
+
 
     }
     public void SpeedCalculation()

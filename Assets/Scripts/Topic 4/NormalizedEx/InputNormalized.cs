@@ -9,16 +9,21 @@ public class InputNormalized : MonoBehaviour
     public float speedMovement;
     public bool normalizedSwitch;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
         PlayerInput();
         NormalizedSwitch();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            normalizedSwitch = true;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            normalizedSwitch = false;
+        }
     }
     public void PlayerInput()
     {
@@ -45,7 +50,9 @@ public class InputNormalized : MonoBehaviour
     {
         if (normalizedSwitch == true)
         {
-            transform.position = transform.position + speedMovement * movement.normalized * Time.deltaTime;
+            // transform.position = transform.position + speedMovement * movement.normalized * Time.deltaTime;
+            movement.Normalize();
+            transform.position = transform.position + speedMovement * movement * Time.deltaTime;
         }
         else
         {

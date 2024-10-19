@@ -336,7 +336,6 @@ MonoBehaviour:
   speedMovement: 2
   aPoint: {fileID: 662020063}
   bPoint: {fileID: 1796673550}
-  switchNormalized: 0
 --- !u!135 &602750374
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -872,7 +871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2007324837
 Transform:
   m_ObjectHideFlags: 0
@@ -1003,4 +1002,3 @@ MonoBehaviour:
   speedMovement: 2
   aPoint: {fileID: 662020063}
   bPoint: {fileID: 651688362}
-  switchNormalized: 0
